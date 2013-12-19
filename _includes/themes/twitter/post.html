@@ -1,23 +1,23 @@
 <div class="page-header">
-  <h1>{{ page.title }} <small>{{ page.date }}</small></h1>
+  <h1>{{ page.title }} <small>{{ post.date | date: "%b %Y" }}</small></h1>
 </div>
 
 <div class="row">
   <div class="col-md-10">
     {{ content }}
     <hr>
-    <div class="pagination">
+    <div >
       <ul class="pager">
       {% if page.previous %}
-        <li class="previous"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+        <li class="previous"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; </a></li>
       {% else %}
-        <li class="previous disabled"><a>&larr; Previous</a></li>
+        <li class="previous disabled"><a>&larr; </a></li>
       {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+        <!-- <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li> -->
       {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">&rarr;</a></li>
       {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="next disabled"><a>&rarr;</a>
       {% endif %}
       </ul>
     </div>
@@ -26,8 +26,8 @@
   </div>
   
   <div class="col-md-4">
-    <h4>Published</h4>
-    <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
+    <!-- <h4>Published</h4> -->
+    <!-- <div class="date"><span>{{ page.date | date_to_long_string }}</span></div> -->
 
   {% unless page.tags == empty %}
     <h4>Tags</h4>
